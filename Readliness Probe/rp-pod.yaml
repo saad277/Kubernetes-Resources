@@ -1,0 +1,18 @@
+
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: rp-pod
+spec:
+  containers:
+  - name: container-rp
+    image: aamirpinger/helloworld:latest
+    ports:
+      - containerPort: 80
+    readinessProbe:
+      httpGet:
+        port: 80
+        path: /
+        
+        
